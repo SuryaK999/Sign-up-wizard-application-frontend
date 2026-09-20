@@ -104,4 +104,3 @@ function Terms({ onBack, onContinue }) { return <main className="shell terms-pag
 function Success({ name, onStartOver }) { return <main className="shell success-page"><div className="ambient a1"/><div className="success-card"><div className="success-icon"><Icon name="check" size={34}/></div><div className="pill success-pill">Profile complete</div><h1>You’re all set{name ? `, ${name.split(' ')[0]}` : ''}.</h1><p>Your account is ready. Welcome to a space built around what matters to you.</p><div className="success-summary"><span><Icon name="check" size={16}/> Email verified</span><span><Icon name="check" size={16}/> Profile saved</span></div><button className="primary" onClick={onStartOver}>Back to welcome <Icon name="arrow" size={18}/></button></div></main> }
 
 createRoot(document.getElementById('root')).render(<App />)
-    
