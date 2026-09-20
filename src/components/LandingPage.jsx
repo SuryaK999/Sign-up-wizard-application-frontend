@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from 'react'
 import Logo from './Logo.jsx'
 
 const ACCOUNTS = [
-  { name: 'Alex Morgan', email: 'alex.morgan.demo@example.com', color: '#0b57d0' },
-  { name: 'Jordan Lee', email: 'jordan.lee.demo@example.com', color: '#188038' },
-  { name: 'Sam Rivera', email: 'sam.rivera.demo@example.com', color: '#b3261e' },
+  { name: 'Tyler Durden', email: 'tyler.durden@example.com', avatar: '/assets/Tyler Durden pfp.png', color: '#b3261e' },
+  { name: 'Peter Parker (Spidey)', email: 'spidey.web@example.com', avatar: '/assets/spidey.png', color: '#0b57d0' },
+  { name: 'Mikasa Ackerman', email: 'mikasa.ackerman@example.com', avatar: '/assets/girlie-aesthetic.png', color: '#188038' },
 ]
 
 const GoogleG = () => (
@@ -32,6 +32,22 @@ function ChooserIcon() {
   )
 }
 
+function AccountAvatar({ account }) {
+  const [err, setErr] = useState(false)
+  if (account.avatar && !err) {
+    return (
+      <span className="gc-avatar">
+        <img src={account.avatar} alt={account.name} onError={() => setErr(true)} />
+      </span>
+    )
+  }
+  return (
+    <span className="gc-avatar" style={{ background: account.color }}>
+      {account.name[0]}
+    </span>
+  )
+}
+
 function GoogleChooser({ busy, onClose, onPick, onAdd }) {
   const firstRef = useRef(null)
   useEffect(() => { firstRef.current?.focus() }, [])
@@ -51,7 +67,7 @@ function GoogleChooser({ busy, onClose, onPick, onAdd }) {
           {ACCOUNTS.map((a, i) => (
             <li key={a.email}>
               <button ref={i === 0 ? firstRef : null} type="button" className="gc-account" disabled={busy} onClick={() => onPick(a)}>
-                <span className="gc-avatar" style={{ background: a.color }}>{a.name[0]}</span>
+                <AccountAvatar account={a} />
                 <span className="gc-text"><span className="gc-name">{a.name}</span><span className="gc-email">{a.email}</span></span>
               </button>
             </li>

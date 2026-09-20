@@ -104,8 +104,8 @@ h1,h2,p{margin:0}
 .gc-list{list-style:none;margin:24px 0 0;padding:0}
 .gc-account{display:flex;align-items:center;gap:16px;width:100%;padding:12px 4px;background:none;border:0;border-bottom:1px solid #dadce0;text-align:left;cursor:pointer;color:inherit}
 .gc-account:hover:not(:disabled){background:#f6f8fc}
-.gc-account:focus-visible{outline:2px solid #1a73e8;outline-offset:-2px}
-.gc-avatar{flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;color:#fff;font:500 15px var(--ui)}
+.gc-avatar{flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;color:#fff;font:500 15px var(--ui);overflow:hidden}
+.gc-avatar img{width:100%;height:100%;object-fit:cover;display:block}
 .gc-text{display:flex;flex-direction:column;min-width:0}
 .gc-name{font:500 15px/20px var(--ui);color:#3c4043}
 .gc-email{font:400 13px/18px var(--ui);color:#5f6368;overflow-wrap:anywhere}

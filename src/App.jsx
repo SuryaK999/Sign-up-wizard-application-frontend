@@ -57,7 +57,7 @@ export default function App() {
 
   const google = (account) => run(async () => {
     await simulate('google')
-    setForm((f) => ({ ...f, authMethod: 'google', email: account.email }))
+    setForm((f) => ({ ...f, authMethod: 'google', email: account.email, name: account.name || f.name }))
     setVerified(true)
     go('profile/username')
   })
