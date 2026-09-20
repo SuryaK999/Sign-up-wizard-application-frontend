@@ -23,6 +23,15 @@ const PersonAdd = () => (
   </svg>
 )
 
+function ChooserIcon() {
+  const [ok, setOk] = useState(true)
+  return (
+    <div className="gc-logo">
+      {ok ? <img src="/assets/logo.png" alt="" onError={() => setOk(false)} /> : <Logo size={24} />}
+    </div>
+  )
+}
+
 function GoogleChooser({ busy, onClose, onPick, onAdd }) {
   const firstRef = useRef(null)
   useEffect(() => { firstRef.current?.focus() }, [])
@@ -35,7 +44,7 @@ function GoogleChooser({ busy, onClose, onPick, onAdd }) {
   return (
     <div className="gc-backdrop" onMouseDown={(e) => { if (e.target === e.currentTarget && !busy) onClose() }}>
       <div className="gc" role="dialog" aria-modal="true" aria-labelledby="gc-title" aria-busy={busy}>
-        <div className="gc-logo"><Logo size={26} /></div>
+        <ChooserIcon />
         <h2 id="gc-title" className="gc-title">Choose an account</h2>
         <p className="gc-sub">to continue to Extroverts</p>
         <ul className="gc-list">
