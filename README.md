@@ -1,38 +1,33 @@
-Here’s a polished README you can use for this repository:
-
-```md
 # Extroverts — Sign-up Wizard Frontend
 
-A modern React + Vite frontend for a multi-step onboarding and sign-up experience. This app simulates a social/community signup flow with authentication, OTP verification, profile creation, invite validation, location selection, and a completion state.
+A modern React + Vite frontend that demonstrates a multi-step onboarding and sign-up experience. This is a frontend-only demo that simulates backend responses for validation and error handling so you can test UX flows without a server.
 
 ## Overview
 
-Extroverts is a demo application designed to showcase a polished sign-up wizard with a strong visual identity and interaction flow. It guides users through:
+Extroverts is a demo application showcasing a polished sign-up wizard with a focused visual identity and interaction flow. It guides users through:
 
 - Landing screen with Google and email sign-up options
-- Email entry and email validation
-- OTP verification step
-- Profile setup with username, name, age, and pronouns
-- Invite code validation
+- Email entry and validation
+- OTP verification
+- Profile creation (username, full name, date of birth, pronouns)
+- Optional invite-code validation
 - Location selection
-- Final success screen
+- Final success/completion screen
 - Guest browsing mode
 
-The app uses simulated backend behavior to mimic real-world validation and error handling without needing a backend service.
+The app uses simulated backend behavior to mimic real-world validation and failure cases.
 
 ## Features
 
 - Responsive, single-page signup flow
 - Google account chooser modal
-- Email-based registration flow
-- 6-digit OTP verification
+- Email-based registration and 6-digit OTP verification
 - Real-time validation for user inputs
 - Age gating and pronoun selection
-- Invite code validation and simulated failure states
-- Final onboarding completion screen
-- Guest browsing placeholder page
+- Invite code validation with simulated error states
+- Guest browsing placeholder
 - Toast notifications for success and error feedback
-- Smooth step transitions and animated UI
+- Smooth step transitions and animated UI elements
 
 ## Tech Stack
 
@@ -80,8 +75,6 @@ The app uses simulated backend behavior to mimic real-world validation and error
 
 ### Prerequisites
 
-Make sure you have the following installed:
-
 - Node.js (v18 or later recommended)
 - npm
 
@@ -97,7 +90,7 @@ npm install
 npm run dev
 ```
 
-This starts the Vite development server. Open the URL shown in the terminal to view the app in the browser.
+This starts the Vite development server. Open the URL shown in the terminal to view the app.
 
 ### Build for production
 
@@ -119,7 +112,7 @@ npm run lint
 
 ## Demo Behavior
 
-This project includes simulated backend logic for demonstration purposes. Some examples:
+The project simulates backend logic to demonstrate validation and error states. Examples:
 
 - Invalid email domains like `@fail.test` trigger a send failure
 - OTP `000000` is treated as an incorrect verification code
@@ -127,7 +120,7 @@ This project includes simulated backend logic for demonstration purposes. Some e
 - Invite code `EXPIRED` shows an invalid/expired invite error
 - Invite code `NETFAIL` simulates a server-side failure
 
-This makes the app useful for UX validation and frontend flow testing without requiring a real backend.
+These simulated cases make the app useful for UX validation and frontend flow testing without a real backend.
 
 ## Screens and Flow
 
@@ -137,11 +130,11 @@ This makes the app useful for UX validation and frontend flow testing without re
    - Browse as guest
 
 2. Email step
-   - Enter an email address
+   - Enter email address
    - Validate input and send OTP
 
 3. OTP verification
-   - Enter the 6-digit code
+   - Enter 6-digit code
    - Resend option with cooldown timer
 
 4. Profile setup
@@ -150,8 +143,8 @@ This makes the app useful for UX validation and frontend flow testing without re
    - Date of birth
    - Pronouns
 
-5. Invite step
-   - Optional invite code validation
+5. Invite step (optional)
+   - Enter and validate invite code
 
 6. Location step
    - Select a location
@@ -161,8 +154,8 @@ This makes the app useful for UX validation and frontend flow testing without re
 
 ## Notes
 
-This is a frontend-only demo project. It is designed to mimic realistic user interactions and validation patterns but does not include a production backend or database.
+This is a frontend-only demo designed to mimic realistic user interactions and validation patterns but does not include a production backend or database. Use it for prototyping, UX testing, and design validation.
 
 ## License
 
-This project currently does not include a license file. If you want, you can add one based on your preferred open-source license.
+This repository does not include a license file. If you want to add one, create a LICENSE file with your preferred open-source license.
